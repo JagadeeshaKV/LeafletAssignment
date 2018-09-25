@@ -1,0 +1,25 @@
+---
+title: "Assignment: R Markdown and Leaflet"
+author: "Jagadeesha"
+date: "September 25, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+ In this assignment we will highlight the location of Chicago Water Tower on leaflet map. Date of the assignment is displayed below the page title.
+
+## Map
+  The blue icon in the below leaflet map indicates the location of Chicago Water Tower. 
+```{r}
+library(leaflet)
+pop <- c("<a href= 'https://en.wikipedia.org/wiki/Chicago_Water_Tower' >Chicago Water Tower</a>")
+ my_map <- leaflet() %>% addTiles()
+ my_map <- my_map %>% addMarkers(lat= 41.897129, lng=-87.6244153,  popup = pop)
+ my_map
+```
+  Click on the blue icon on the map. It will open a popup. Clicking on the link available in the popup will take you to Chicago Water Tower's wikipedia page.
